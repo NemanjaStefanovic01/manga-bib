@@ -1,0 +1,18 @@
+<div class="gornji-deo">
+     <h1>Pridruzi se sajtu uz naših {{korisnici.length}} korisnika </h1>
+     <h2>I uživaj u velikom izboru od {{mange.length}} mangi</h2>
+     <button (click)="navigacijaNaNovogKorisnika()">PRIDRUŽI SE</button>
+</div>
+<div class="kontejner-korisnka">
+     <div class="korisnik"
+          *ngFor="let korisnik of korisnici">
+        <h2>{{korisnik.firstName}} {{korisnik.lastName}}</h2>
+
+        <button (click)="OtvoriInformacije(korisnik.id)">PROFIL</button>
+
+        <p *ngIf="korisnik.active" class="aktivan"> Aktivan/a </p>
+        <p *ngIf="!korisnik.active" class="neaktivan"> Neaktivan/a </p>
+
+        <p>{{ korisnik.createdDate | date:'dd.MM.yyyy' }}</p>
+     </div>
+</div>

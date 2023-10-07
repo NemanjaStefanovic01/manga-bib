@@ -1,0 +1,21 @@
+<div class="gornji-deo">
+    <h1>Kreiraj profil</h1>
+</div>
+<div class="forma">
+    <div class="stavka-forme">
+        <label>Ime:</label>
+        <input type="text" placeholder="Unesite Ime"
+               [(ngModel)]="korisnik.firstName"/>
+    </div>
+    <div class="stavka-forme">
+        <label>Prezime:</label>
+        <input type="text" placeholder="Unesite Prezime"
+               [(ngModel)]="korisnik.lastName"/>
+    </div>
+    <div class="stavka-forme">
+        <label>Avatar:</label>
+        <input type="text" placeholder="Unesite Link Avatara"
+               [(ngModel)]="korisnik.avatarURL"/>
+    </div>
+    <button (click)="KreirajProfil()">KREIRAJ</button>
+</div>

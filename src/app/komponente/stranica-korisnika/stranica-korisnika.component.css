@@ -1,0 +1,76 @@
+.kontejner-korisnka{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.korisnik{
+    width: 280px;
+    height: 200px;
+    margin: 20px 50px;
+    padding: 1rem;
+    
+    border: 2px solid black;
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.korisnik h2{
+    margin-bottom: 1.2rem;
+}
+.korisnik button{
+    height: 45px;
+    width: 120px;
+    margin-bottom: 1.2rem;
+
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+
+    font-size: large;
+}
+.korisnik button:hover{
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+}
+
+.aktivan{
+    color: green;
+}
+.neaktivan{
+    color: red;
+}
+
+.gornji-deo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 50px;
+}
+.gornji-deo h1,h2{
+    text-transform: uppercase;
+    margin: 20px;
+}
+.gornji-deo button{
+    height: 70px;
+    width: 220px;
+    margin-top: 1.2rem;
+
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+
+    font-size: x-large;
+}
+.gornji-deo button:hover{
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+}

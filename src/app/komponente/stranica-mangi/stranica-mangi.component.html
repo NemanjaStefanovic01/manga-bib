@@ -1,0 +1,55 @@
+<div class="lista-mangi">
+    <div class="manga"
+         *ngFor="let manga of this.sveMange">
+        <div class="manga-info">
+            <div>
+                <h3>{{manga.title}}</h3>
+                <p>{{manga.author}}</p>
+            </div>
+            <p>{{manga.yearPublished}}god</p>
+        </div>
+        <div class="manga-korsinik">
+            <input type="text" placeholder="Korisnik koji iznajmljuje"
+                   [(ngModel)]="imeKorisnika"
+                   (ngModelChange)="ProveriKorisnika()">
+            <p *ngIf="prikaziGresku">Nepostojeci Korisnik!</p>
+        </div>
+        <div class="manga-iznajmi">
+            <p>Slobodnih kopija: {{manga.availableCopies}}</p>
+            <button (click)="BtnIznajmiMangu(manga)">Iznajmi</button>
+            <button (click)="BtnObrisiMangu(manga)">Obriši</button>
+        </div>
+    </div>
+
+    <button class="btn-dodajNovuMangu" (click)="BtnNovaManga()">NOVA MANGA</button>
+
+    <div class="dodaj-novu-mangu"
+         *ngIf="kreiranjeNoveMange">
+        <div class="stavka-forme">
+            <label>Naslov:</label>
+            <input type="text" placeholder="Unesite Naslov"
+                   [(ngModel)]="manga.title"/>
+        </div>
+        <div class="stavka-forme">
+            <label>Autor:</label>
+            <input type="text" placeholder="Unesite Autora"
+                   [(ngModel)]="manga.author"/>
+        </div>
+        <div class="stavka-forme">
+            <label>Izdavač:</label>
+            <input type="text" placeholder="Unesite Avatarča"
+                   [(ngModel)]="manga.publisher"/>
+        </div>
+        <div class="stavka-forme">
+            <label>Godina Izdavanja:</label>
+            <input type="text" placeholder="Unesite Godinu Izdavanja"
+                   [(ngModel)]="manga.yearPublished"/>
+        </div>
+        <div class="stavka-forme">
+            <label>Broj kopija:</label>
+            <input type="text" placeholder="Unesite Br. Kopija"
+                   [(ngModel)]="manga.numberOfCopies"/>
+        </div>
+        <button (click)="KreirajMangu()">KREIRAJ</button>
+    </div>
+</div>

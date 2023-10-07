@@ -1,0 +1,47 @@
+<div class="naslovi">
+    <h1>KORISNIK</h1>
+    <h1>IZNAJMLJENE MANGE</h1>
+</div>
+<div class="glavni-kontejner"
+    *ngIf="korisnikoveMange != null">
+    <div class="korisnik">
+        <div class="stavka">
+            <label>Ime:</label>
+            <input type="text" placeholder="Unesite Ime"
+                   [(ngModel)]="korisnik.firstName"/>
+        </div>
+        <div class="stavka">
+            <label>Prezime:</label>
+            <input type="text" placeholder="Unesite Prezime"
+                   [(ngModel)]="korisnik.lastName"/>
+        </div>
+        <div class="stavka">
+            <label>Avatar:</label>
+            <input type="text" placeholder="Unesite Link Avatara"
+                   [(ngModel)]="korisnik.avatarURL"/>
+        </div>
+        <div class="kontejner-dugmica">
+            <button *ngIf="korisnik.active"
+                    (click)="PromeniAktivnostKorisnika()">DEAKTIVIRAJ</button>
+            <button *ngIf="!korisnik.active"
+                    (click)="PromeniAktivnostKorisnika()">AKTIVIRAJ</button>
+            <button (click)="SacuvajIzmene()">SAČUVAJ</button>
+        </div>
+        <button (click)="ObrisiKorisnika()">OBRIŠI KORSINIKA</button>
+    </div>
+    <div class="mange">
+        <div class="manga"
+             *ngFor="let manga of korisnik.rentedBooks">
+            <h3>{{this.dataService.bookCopyToBook(manga.bookID).title}}</h3>
+            <p>{{this.dataService.bookCopyToBook(manga.bookID).author}}</p>
+            <p>{{this.dataService.bookCopyToBook(manga.bookID).publisher}}</p>
+            <p>{{this.dataService.bookCopyToBook(manga.bookID).yearPublished}}</p>
+            <button (click)="VratiMangu(manga.id)">Vrati Mangu</button>
+        </div>
+        <div class="nema-mange" 
+             *ngIf="korisnik.rentedBooks.length == 0">
+            <h1>Korsnik nema mange</h1>
+            <button (click)="IznajmiBtn()">IZNAJMI</button>
+        </div>
+    </div>
+</div>
